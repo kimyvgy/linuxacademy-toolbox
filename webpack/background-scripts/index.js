@@ -51,7 +51,7 @@ module.exports = {
         transform: () => {
           manifest.version = pkg.version
 
-          return Buffer(JSON.stringify(manifest, null, 2))
+          return Buffer.from(JSON.stringify(manifest, null, 2))
         }
       },
       {

@@ -6,7 +6,7 @@
     </header>
 
     <article id="detected-transcript-content">
-      <p v-for="(transcript, key) in transcript" :key="key">
+      <p v-for="(transcript, key) in transcripts" :key="key">
         {{ transcript.content }}
       </p>
     </article>
@@ -36,12 +36,14 @@ export default class TranscriptSection extends Vue {
       chrome.tabs.sendMessage(
         activeTabId,
         DETECT_TRANSCRIPT,
-        (transcripts: Array<Caption> = []) => this.transcripts = transcripts
+        (transcripts: Array<Caption> = []) => {
+          this.transcripts = transcripts
+        }
       )
     })
   }
 
-  onDownloadSubtitle = (): void => {
+  downloadSubtitle = (): void => {
     alert('This feature is comming soon!')
   }
 

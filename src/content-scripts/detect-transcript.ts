@@ -4,7 +4,7 @@ const getCaptions = (): Array<Caption> => {
   const captions: Array<Caption> = []
   const elements: NodeListOf<Element>= document.querySelectorAll('.caption-container .caption')
 
-  elements.forEach((item: Element) : void => {
+  elements.forEach((item: Element): void => {
     const startTime: Element|null = item.querySelector('.caption-start-time > span')
     const sentence: Element|null = item.querySelector('.caption-text p')
 
@@ -19,7 +19,7 @@ const getCaptions = (): Array<Caption> => {
   return captions
 }
 
-chrome.runtime.onMessage.addListener((request: string, _, sendResponse: Function) => {
+chrome.runtime.onMessage.addListener((request: string, _, sendResponse: Function):void => {
   if (request === DETECT_TRANSCRIPT) {
     sendResponse(getCaptions())
   }

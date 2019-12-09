@@ -1,5 +1,5 @@
 <template>
-  <app id="#app" class="v-lat-app">
+  <div class="v-lat-app">
     <Header />
 
     <main class="v-lat-content">
@@ -7,7 +7,7 @@
     </main>
 
     <Footer />
-  </app>
+  </div>
 </template>
 
 <script lang="ts">
@@ -25,9 +25,3 @@ import TranscriptSection from '~/components/Sections/Transcript.vue'
 })
 export default class App extends Vue {}
 </script>
-
-<style lang="scss">
-#app {
-  background: red;
-}
-</style>
