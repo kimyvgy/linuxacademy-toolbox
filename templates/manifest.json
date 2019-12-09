@@ -1,31 +1,32 @@
 {
   "name": "Linux Academy Toolbox",
   "description": "Detect available transcript in the Linux Academy's lesson page",
-  "version": "0.1.0",
+  "version": "<%= version %>",
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "browser_action": {
-    "default_icon": "images/logo-48.png",
+    "default_icon": "static/images/logo-48.png",
     "default_popup": "popup/index.html"
   },
   "icons": {
-    "16": "images/logo-16.png",
-    "32": "images/logo-32.png",
-    "48": "images/logo-48.png",
-    "128": "images/logo-128.png"
+    "16": "static/images/logo-16.png",
+    "32": "static/images/logo-32.png",
+    "48": "static/images/logo-48.png",
+    "128": "static/images/logo-128.png"
   },
   "permissions": [
     "activeTab"
   ],
+  "background": {
+    "scripts": ["background-scripts.js"]
+  },
   "content_scripts": [
     {
       "matches": [
         "http://linuxacademy.com/*",
         "https://linuxacademy.com/*"
       ],
-      "js": [
-        "content/detect-transcript.js"
-      ]
+      "js": ["content-scripts.js"]
     }
   ]
 }

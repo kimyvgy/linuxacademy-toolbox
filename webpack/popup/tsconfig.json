@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": [
+      "@types/chrome",
+      "@types/lodash"
+    ],
+    "paths": {
+      "@/*": ["../../src/*"],
+      "~/*": ["../../src/popup/*"]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "../../src/types/**/*.ts",
+    "../../src/popup/**/*.ts",
+    "../../src/popup/**/*.tsx",
+    "../../src/popup/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
