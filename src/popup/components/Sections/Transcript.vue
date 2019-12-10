@@ -1,7 +1,6 @@
 <template>
   <section class="v-lat-section v-lat-detected-transcript">
     <header v-if="hasTranscript" class="v-lat-detected-transcript-header">
-      <button class="v-lat-button" @click="onClickDownload">Download subtitle</button>
       <button class="v-lat-button" @click="onToggleShowTime">
         {{ showTime ? 'Hide start time' : 'Display start time' }}
       </button>
@@ -74,10 +73,6 @@ export default class Transcript extends Vue {
   onToggleShowTime(): void {
     this.showTime = !this.showTime
     window.localStorage.setItem(SHOW_TIME_KEY, JSON.stringify(this.showTime))
-  }
-
-  onClickDownload(): void {
-    alert('This feature is comming soon!')
   }
 
   onClickCopy():void {
