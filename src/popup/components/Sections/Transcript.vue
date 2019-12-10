@@ -77,6 +77,7 @@ export default class Transcript extends Vue {
 
   onClickCopy():void {
     copy(this.transcriptText)
+    alert('Coppied transcript to your clipboard!')
   }
 }
 </script>
